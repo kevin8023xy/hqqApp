@@ -11,7 +11,7 @@
 	export default {
 		data() {
 			return {
-				title: 'hqqAPP'
+				title: 'hqqApp1'
 			}
 		},
 		onLoad() {
