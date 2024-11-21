@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "echarts": "^5.5.1",
+    "unplugin-auto-import": "^0.18.5"
+  }
+}

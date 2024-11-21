@@ -3,9 +3,256 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "uni-app",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/oneMap/oneMap",
+			"style": {
+				"navigationBarTitleText": "一张图",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/fill/fill",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/monitor/monitor",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/publish/publish",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/index/naviMore",
+			"style": {
+				"navigationBarTitleText": "功能快捷键",
+				"enablePullDownRefresh": false,
+				"navigationBarLeftItem": "back" // 显示返回按钮
+			}
+		},
+		{
+			"path": "pages/monitor/monitor-video",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/publish/publish-report",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-level-observe/water-level-observe",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-level-observe/water-level-oberserve-report",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-diversion/water-diversion",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-diversion/water-diversion-approval",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-use-apply/water-use-apply",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-use-apply/water-use-apply-report",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-use-apply/water-use-apply-approval",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-use-apply/water-use-apply-approval-water",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-use-register/water-use-register",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-use-register/water-use-register-report",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-use-register/water-use-register-approval",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-use-register/water-use-register-approval-water",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/fill/water-settlement/water-settlement",
+			"style": {
+				"navigationBarTitleText": "用水结算"
+			}
+		},
+		{
+			"path" : "pages/fill/water-settlement/water-settlement-report",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/water-settlement/water-settlement-approval",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/water-settlement/water-settlement-approval-water",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/engineer-inspection/engineer-inspection",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/engineer-inspection/engineer-inspection-report",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/engineer-inspection/engineer-inspection-approval",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/engineer-inspection/engineer-inspection-approval-water",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/repair-apply/repair-apply",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/repair-apply/repair-apply-report",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/repair-apply/repair-apply-approval",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/repair-apply/repair-apply-approval-water",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/repair-records/repair-records",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/repair-records/repair-records-report",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/repair-records/repair-records-approval",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/fill/repair-records/repair-records-approval-water",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
 			}
 		}
+		
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -13,5 +260,46 @@
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
-	"uniIdRouter": {}
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#9799a5",
+		"list": [{
+				"text": "首页",
+				"pagePath": "pages/index/index",
+				"iconPath": "static/images/tabBar/home.png",
+				"selectedIconPath": "static/images/tabBar/home-h.png"
+			},
+			{
+				"text": "一张图",
+				"pagePath": "pages/oneMap/oneMap",
+				"iconPath": "static/images/tabBar/oneMap.png",
+				"selectedIconPath": "static/images/tabBar/oneMap-h.png"
+
+			},
+			{
+				"text": "填报",
+				"pagePath": "pages/fill/fill",
+				"iconPath": "static/images/tabBar/fill.png",
+				"selectedIconPath": "static/images/tabBar/fill-h.png"
+			},
+			{
+				"text": "监测",
+				"pagePath": "pages/monitor/monitor",
+				"iconPath": "static/images/tabBar/monitor.png",
+				"selectedIconPath": "static/images/tabBar/monitor-h.png"
+			},
+			{
+				"text": "发布",
+				"pagePath": "pages/publish/publish",
+				"iconPath": "static/images/tabBar/publish.png",
+				"selectedIconPath": "static/images/tabBar/publish-h.png"
+			},
+			{
+				"text": "我的",
+				"pagePath": "pages/mine/mine",
+				"iconPath": "static/images/tabBar/user.png",
+				"selectedIconPath": "static/images/tabBar/user-h.png"
+			}
+		]
+	}
 }

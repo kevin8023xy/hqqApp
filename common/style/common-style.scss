@@ -1,0 +1,39 @@
+view,swiper,swiper-item {
+	box-sizing: border-box;
+}
+page {
+	height: 100%;
+}
+.pageBg {
+	background:  
+	linear-gradient(to bottom, transparent 0%, #fff 400rpx),
+	linear-gradient(to right, #EDD5C0 20%,#B5EAD7);
+	min-height: 80vh; 
+}
+
+.loadingLayout {
+	padding: 30rpx 0;
+}
+
+.flex {
+	display: flex;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.justify-center {
+	justify-content: center;
+}
+.w100 {
+	width: 100%;
+}
+.h100 {
+	height: 100%;
+}
+.wh100 {
+	width: 100%;
+	height: 100%;
+}
+
