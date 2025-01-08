@@ -1,43 +1,90 @@
-const BASE_URL = 'https://tea.qingnian8.com/api/bizhi';
+// import {useUserStore}  from '@/stores/user.js'
+import config from './config.js'
+import { getToken } from './auth.js'
+import errorCode from './errorcode.js'
+import { toast, showConfirm, tansParams } from './common.js'
+// import { encryptBase64, encryptWithAes, generateAesKey } from '@/utils/crypto';
+// import { encrypt } from '@/utils/jsencrypt';
 
-export function request(config = {}) {
-	let {
-		url,
-		data = {},
-		method = "GET",
-		header = {}
-	} = config
-
-	url = BASE_URL + url
-	header['access-key'] = 'xkw_8023'
-
-	return new Promise((resolve, reject) => {
-		uni.request({
-			url,
-			data,
-			method,
-			header,
-			success: res => {
-				if (res.data.errCode === 0) {
-					resolve(res.data)
-				} else if (res.data.errCode === 400) {
-					uni.showModal({
-						title: '错误提示',
-						content: res.data.errMsg,
-						showCancel: false
-					})
-					reject(res.data)
-				} else {
-					uni.showToast({
-						title: res.data.errMsg,
-						icon: "none"
-					})
-					reject(res.data)
-				}
-			},
-			fail: err => {
-				reject(err)
-			}
-		})
-	})
+// const userStore = useUserStore()
+let timeout = 10000
+const baseUrl = config.baseUrl
+const clientId = config.clientId
+ 
+const request = config => {
+  // 是否需要设置 token
+  const isToken = (config.headers || {}).isToken === false
+  config.header = config.header || {}
+  if (getToken() && !isToken) {
+    config.header['Authorization'] = 'Bearer ' + getToken()
+  }
+  config.header['clientid']=clientId
+  // get请求映射params参数
+  if (config.params) {
+    let url = config.url + '?' + tansParams(config.params)
+    url = url.slice(0, -1)
+    config.url = url
+  }
+  // // 是否需要加密
+  // const isEncrypt = (config.headers || {}).isEncrypt === true;
+  // // 当开启参数加密
+  // if (isEncrypt && (config.method === 'post' || config.method === 'put')) {
+  //   // 生成一个 AES 密钥
+  //   const aesKey = generateAesKey();
+  //   config.header['encrypt-key'] = encrypt(encryptBase64(aesKey));
+  //   config.data = typeof config.params === 'object' ? encryptWithAes(JSON.stringify(config.params), aesKey) : encryptWithAes(config.params, aesKey);
+  // }
+  return new Promise((resolve, reject) => {
+    uni.request({
+        method: config.method || 'get',
+        timeout: config.timeout ||  timeout,
+        url: config.baseUrl || baseUrl + config.url,
+        data: config.data,
+        header: config.header,
+        dataType: 'json'
+      }).then(response => {
+        let [error, res] = response
+        if (error) {
+          toast('后端接口连接异常')
+          reject('后端接口连接异常')
+          return
+        }
+        const code = res.data.code || 200
+        const msg = errorCode[code] || res.data.msg || errorCode['default']
+        if (code === 401) {
+          showConfirm('登录状态已过期，您可以继续留在该页面，或者重新登录?').then(res => {
+            if (res.confirm) {
+             // 调用 Pinia store 中的 logoutAction
+             // userStore.logoutAction().then(() => {
+             //   uni.reLaunch({ url: '/pages/login' })
+             // }).catch((error) => {
+             //   console.error('Logout failed:', error)
+             // }
+            }
+          })
+          reject('无效的会话，或者会话已过期，请重新登录。')
+        } else if (code === 500) {
+          toast(msg)
+          reject('500')
+        } else if (code !== 200) {
+          toast(msg)
+          reject(code)
+        }
+        resolve(res.data)
+      })
+      .catch(error => {
+        let { message } = error
+        if (message === 'Network Error') {
+          message = '后端接口连接异常'
+        } else if (message.includes('timeout')) {
+          message = '系统接口请求超时'
+        } else if (message.includes('Request failed with status code')) {
+          message = '系统接口' + message.substr(message.length - 3) + '异常'
+        }
+        toast(message)
+        reject(error)
+      })
+  })
 }
+ 
+export default request

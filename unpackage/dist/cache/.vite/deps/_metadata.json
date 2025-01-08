@@ -1,13 +1,13 @@
 {
-  "hash": "323dda27",
+  "hash": "a5ce6b88",
   "configHash": "2d9334a8",
-  "lockfileHash": "9e223cef",
-  "browserHash": "4c80fe81",
+  "lockfileHash": "63c25af0",
+  "browserHash": "6542c7d4",
   "optimized": {
-    "echarts": {
-      "src": "../../../../../node_modules/echarts/index.js",
-      "file": "echarts.js",
-      "fileHash": "b2586e2b",
+    "pinia-plugin-unistorage": {
+      "src": "../../../../../node_modules/pinia-plugin-unistorage/dist/index.mjs",
+      "file": "pinia-plugin-unistorage.js",
+      "fileHash": "e0028c5d",
       "needsInterop": false
     }
   },

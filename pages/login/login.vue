@@ -48,6 +48,8 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useUserStore } from '@/stores/user'
+const userStore = useUserStore() // 获取 Pinia store
 const title = ref('红旗渠灌区移动办公');
 const subTitle = ref('数字孪生系统');
 
@@ -76,12 +78,21 @@ const getCode = () => {
     // });
 };
 
-const handleLogin = () => {
-    console.log('登录');
-	uni.switchTab({
-		url: '/pages/index/index'
-	})
-};
+// const handleLogin = async () => {
+//     console.log('登录');
+    
+//    try {
+// 	 // 调用 Pinia 中的 loginAction
+// 	 await userStore.loginAction(loginForm.value)
+
+// 	uni.switchTab({
+// 		url: '/pages/index/index'
+// 	})
+
+//    } catch (error) {
+// 	console.log('登录失败', error);
+//    }
+// };
 
 const handleUserRegister = () => {
     console.log('zc');
@@ -94,7 +105,7 @@ const handleUserRegister = () => {
 .normal-login-container {
     width: 100%;
     height: 100vh;
-	background-color: #0541aa;
+    background-color: #0541aa;
 
     .logo-content {
         width: 100%;
